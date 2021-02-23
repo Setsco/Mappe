@@ -2,7 +2,9 @@ package idata2001;
 
 abstract public class Doctor extends Employee {
 
-   abstract public Doctor(String, String, String){}
+    public Doctor(String firstName, String lastName, String socialSecurityNumber){
+      super(firstName,lastName,socialSecurityNumber);
+   }
 
-   public abstract void setDiagnosis(Patient, String)
+   public abstract void setDiagnosis(Patient patient , String diagnosis);
 }
