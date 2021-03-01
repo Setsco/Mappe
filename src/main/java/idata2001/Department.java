@@ -27,6 +27,7 @@ public class Department {
     public void addEmployees(Employee employee){
         employees.add(employee);
     }
+
     public ArrayList<Patient> getPatients(){
         return patients;
     }
@@ -35,5 +36,16 @@ public class Department {
         patients.add(patient);
     }
 
-    public int hashCode()
+    //public int hashCode()
+
+    public boolean equals(Object object){
+        boolean equal;
+        if(object.hashCode() == hashCode()){
+            equal = true;}
+        else{
+            equal = false;
+        }
+        return equal;
+        }
+    }
 }
