@@ -47,5 +47,5 @@ public class Department {
         }
         return equal;
         }
-    }
+
 }
