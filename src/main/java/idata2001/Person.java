@@ -9,7 +9,13 @@ abstract public class Person {
     public Person(String firstName, String lastName, String socialSecurityNumber){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.socialSecurityNumber = socialSecurityNumber;
+        if(socialSecurityNumber.isBlank()){
+           throw new IllegalArgumentException("Social security number cannot be empty");
+        }
+        else{
+            this.socialSecurityNumber = socialSecurityNumber;
+           }
+
     }
 
     public String getPersonNumber(){
@@ -34,5 +40,10 @@ abstract public class Person {
 
     public String getLastName(){
         return lastName;
+    }
+
+    public String getFullName(){
+        String fullName = this.firstName + this.lastName;
+        return fullName;
     }
 }
