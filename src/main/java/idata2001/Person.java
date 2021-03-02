@@ -6,7 +6,7 @@ abstract public class Person {
     private String lastName;
     private String socialSecurityNumber;
 
-    public Person(String firstName, String lastName, String socialSecurityNumber){
+    public Person(String firstName, String lastName, String socialSecurityNumber) throws IllegalArgumentException{
         this.firstName = firstName;
         this.lastName = lastName;
         if(socialSecurityNumber.isBlank()){

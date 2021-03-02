@@ -1,32 +1,78 @@
 package idata2001;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+
+
 public class HospitalClient {
+    private final Hospital hospital;
 
     public HospitalClient(){
-        Hospital KillThemAll = new Hospital("KillThemAll");
-        HospitalTestData.fillRegisterWithTestData(KillThemAll);
-        ArrayList<Patient> patients = new ArrayList<>();
-        ArrayList<Employee> employees = new ArrayList<>();
+        this.hospital = new Hospital("killThemAll");
+        HospitalTestData.fillRegisterWithTestData(hospital);
     }
 
     public void removePatient(){
-        String socialSecurityNumber;
         Scanner sc = new Scanner(System.in);
+        String removedPatient;
+        List<Department> departments = hospital.getDepartments();
 
-        System.out.println("Delete patient by security number");
+        System.out.println("Delete a person by security number");
         System.out.println("Enter security number");
-        socialSecurityNumber = sc.nextLine();
-        
+        removedPatient = sc.nextLine();
+
+            departments.forEach(department ->
+            {
+                try {
+                    department.removePerson(removedPatient);
+                } catch (RemoveException e) {
+                    System.out.println("this person does not exist in the register...");
+                }
+            });
+
+
+        }
+
+    public void removeEmployee(){
+
+        Scanner sc = new Scanner(System.in);
+        String removedEmployee;
+        List<Department> departments = hospital.getDepartments();
+
+        System.out.println("Delete a person by security number");
+        System.out.println("Enter security number");
+        removedEmployee = sc.nextLine();
+
+        departments.forEach(department ->
+        {
+            try {
+                department.removePerson(removedEmployee);
+            } catch (RemoveException e) {
+                System.out.println("This person does not exist in the register...");
+            }
+        });
+
+
     }
+
+
+
 
 
 
     public static void main(String[] args) {
-        removePatient();
-        removeEmployee();
+        HospitalClient hC = new HospitalClient();
+        try{
+            hC.removeEmployee();
+            hC.removePatient();
+        }catch (IllegalArgumentException e){
+            System.out.println("Social security number cannot be blank or null. Please try entering a valid number.");
+
+        }
+
+
 
     }
 }
