@@ -101,7 +101,7 @@ public class HospitalClient {
                             try {
                                 removeEmployee();
                             } catch (RemoveException e){
-                                System.out.println("Employee does not exist in list.");
+                                System.out.println("Employee does not exist  list.");
                             }
                             break;
 
@@ -109,7 +109,7 @@ public class HospitalClient {
                             try {
                                 removePatient();
                             }catch (RemoveException e){
-                                System.out.println("Patient does not exist in list.");
+                                System.out.println("Patient does not exist  list.");
                             }
                             break;
 
