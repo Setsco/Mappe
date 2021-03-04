@@ -4,6 +4,9 @@ import idata2001.Nurse;
 import idata2001.GeneralPractitioner;
 import idata2001.Surgeon;
 
+/**
+ * Represents a test class with predefined departments, employees and patients.
+ */
 public class HospitalTestData {
     /**
      * Fills the hospital provided as a parameter with

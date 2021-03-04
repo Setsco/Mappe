@@ -2,6 +2,9 @@ package idata2001;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a hospital.
+ */
 public class Hospital {
 
     private final String hospitalName;

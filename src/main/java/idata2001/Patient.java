@@ -1,5 +1,8 @@
 package idata2001;
 
+/**
+ * Represents a patient in the hospital facility.
+ */
 public class Patient extends Person implements Diagnosable{
     private String diagnosis;
 

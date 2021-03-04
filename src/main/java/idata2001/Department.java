@@ -2,6 +2,9 @@ package idata2001;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * Represents a specific department in a hospital.
+ */
 public class Department {
 
     private final String departmentName;
@@ -17,28 +20,52 @@ public class Department {
         }
     }
 
+    /**
+     * Gets department name
+     * @return department name
+     */
     public String getDepartmentName(){
         return departmentName;
     }
 
+    /**
+     * Gets list of employees.
+     * @return List of employees
+     */
     public ArrayList<Employee> getEmployees(){
         return employees;
     }
 
+    /**
+     * Adds employee to list.
+     * @param employee
+     */
     public void addEmployees(Employee employee){
         employees.add(employee);
     }
 
+    /**
+     * Gets patients list.
+     * @return patient list.
+     */
     public ArrayList<Patient> getPatients(){
         return patients;
     }
 
+    /**
+     * Adds patient to list.
+     * @param patient
+     */
     public void addPatient(Patient patient){
         patients.add(patient);
     }
 
-    //public int hashCode()
 
+    /**
+     * Compares two objects with a unique integer. If unique number matches then objects are equal.
+     * @param object
+     * @return whether the objects are equal or not.
+     */
     public boolean equals(Object object){
         boolean equal;
         if(object.hashCode() == hashCode()){
@@ -49,7 +76,12 @@ public class Department {
         return equal;
         }
 
-        public void removePerson(String securityNumber) throws RemoveException {
+    /**
+     * Removes person from one of the lists available.
+     * @param securityNumber
+     * @throws RemoveException
+     */
+    public void removePerson(String securityNumber) throws RemoveException {
             boolean removed = false;
             Iterator<Employee> employeeIterator = employees.iterator();
             Iterator<Patient> patientIterator = patients.iterator();

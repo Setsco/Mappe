@@ -1,5 +1,8 @@
 package idata2001;
 
+/**
+ * Represents a person.
+ */
 abstract public class Person {
 
     private String firstName;
